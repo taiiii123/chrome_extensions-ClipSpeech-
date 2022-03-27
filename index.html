@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./css/style.css"></script>
     <title>Clip Voice</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/sanitize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css" type="text/css" media="all" />
 </head>
 <body>
-    <h1>Clip Voice</h1>
-    <textarea name="inputField" id="inputField" cols="30" rows="10"></textarea>
-    <div>
-        <button id="copy">コピー</button>
-        <button id="delete">削除</button>
-        <button id="start">開始</button>
-        <button id="stop">停止</button>
+    <h1>Clip Speech</h1>
+    <div class="field">
+        <div class="show-recording-msg"></div>
+        <textarea name="inputField" id="inputField" placeholder="ここに話した内容が表示されます。" cols="50" rows="10"></textarea>
     </div>
+
+    <div class="action">
+        <button id="start" onclick="recording()"><i class="fa-solid fa-play faa-flash animated-hover"></i>開始</button>
+        <button id="stop" onclick="recordingStop()"><i class="fa-solid fa-pause faa-vertical animated-hover"></i>停止</button>
+        <button id="copy" class="copy-value" data-clipboard-target="#inputField" onclick="copyToClipBoard()"><i class="fa-solid fa-clipboard faa-wrench animated-hover"></i>コピー</button>
+        <button id="delete" onclick="deleteTextArea()"><i class="fa-solid fa-trash-can faa-ring animated-hover"></i>削除</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script src="js/content.js"></script>
 </body>
 </html>
+

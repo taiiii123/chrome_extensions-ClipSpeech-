@@ -1,3 +1,78 @@
-body{
-    
+body {
+    height: 400px;
+    width: 400px;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+}
+
+.show-recording-msg {
+    height: 20px;
+    width: auto;
+}
+
+.field {
+    text-align: center;
+}
+
+.field > .show-recording-msg {
+    margin-left: 20px;
+    text-align: left;
+}
+
+button > i {
+    padding-right: 3px;
+}
+
+.action {
+    margin-top: 20px;
+    margin-left: -12px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.copy-value {
+    position: relative;
+}
+#start:hover, #stop:hover, #copy:hover, #delete:hover{
+    background: #f2fafc;
+}
+
+.tooltip::after {
+    content: 'Copied!';
+    background: #555;
+    display: inline-block;
+    color: #fff;
+    border-radius: .4rem;
+    position: absolute;
+    top: -25.5px;
+    bottom: 28px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: .75rem;
+    padding: 4px 10px 6px 10px;
+    animation: fade-tooltip .5s 1s 1 forwards;
+}
+
+@keyframes fade-tooltip {
+    to { opacity: 0; }
+}
+
+#start {
+    cursor: pointer;
+}
+
+#stop {
+    cursor: pointer;
+}
+
+#copy {
+    cursor: pointer;
+}
+
+#delete {
+    cursor: pointer;
 }

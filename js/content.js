@@ -1,9 +1,7 @@
 'use strict';
 
-// textareaのノード取得
 const idInputField = document.getElementById("inputField");
 
-//  コピーイベントのボタンを取得
 const btn = document.querySelector('.copy-value');
 
 const idCopy = document.getElementById("copy");

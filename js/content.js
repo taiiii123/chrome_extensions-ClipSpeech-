@@ -13,7 +13,6 @@ const idStop = document.getElementById("stop");
 
 let finalTranscript = "";
 
-// Preparation for speech recognition
 const speech = new webkitSpeechRecognition();
 speech.lang = "ja-JP";
 speech.interimResults = true;

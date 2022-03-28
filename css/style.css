@@ -1,5 +1,5 @@
 body {
-    height: 400px;
+    height: 255px;
     width: 400px;
 }
 
@@ -28,7 +28,7 @@ button > i {
 
 .action {
     margin-top: 20px;
-    margin-left: -12px;
+    margin-left: -5px;
     margin-bottom: 5px;
     display: flex;
     justify-content: space-evenly;

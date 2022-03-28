@@ -1,12 +1,17 @@
 {
-    "name": "Sample",
+    "name": "らくらく音声認識",
     "version": "1.0.0",
-    "manifest_version": 2,
-    "description": "Sample Chrome Extension",
+    "manifest_version": 3,
+    "description": "マイクに話した内容を自動的にテキスト変換を行います。簡単にクリップボードにコピーすることが可能で、キーボード入力の手間を省きます。",
+    "action": {
+        "default_title": "らくらく音声認識",
+        "default_popup": "index.html"
+    },
     "content_scripts": [
         {
             "matches": ["https://*/"],
-            "js": ["content.js"]
+            "js": ["js/test.js"],
+            "css": ["css/style.css"]
         }
     ]
 }

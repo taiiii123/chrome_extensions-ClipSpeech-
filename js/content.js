@@ -1,9 +1,9 @@
 'use strict';
 
-// Select textarea
+// textareaのノード取得
 const idInputField = document.getElementById("inputField");
 
-// Select .copy-value items
+//  コピーイベントのボタンを取得
 const btn = document.querySelector('.copy-value');
 
 const idCopy = document.getElementById("copy");
@@ -19,10 +19,9 @@ speech.lang = "ja-JP";
 speech.interimResults = true;
 speech.continuous = true;
 
-const recording = () => {
-    console.log("start!!");
 
-    
+const recording = () => {
+
     speech.start();
 
     speech.onaudiostart = () => {
@@ -33,9 +32,9 @@ const recording = () => {
         show_msg.appendChild(i);
     }
 
-    speech.onend = () => { 
-        resetElement();
-    }
+    // speech.onend = () => { 
+    //     resetElement();
+    // }
 
     speech.onresult = (e) => {
 
@@ -49,14 +48,12 @@ const recording = () => {
                 finalTranscript += text;
             } 
         }
-        console.log(`finalTranscript => ${finalTranscript}`);
         idInputField.value = finalTranscript;
     }
 }
 
 const recordingStop = () => {
     speech.stop();
-    console.log("recording stop!!");
     finalTranscript = "";
 
     resetElement();
@@ -75,7 +72,6 @@ const copyToClipBoard = (e) => {
     clipboard.on('success', function(e) {
         btn.className = "copy-value  tooltip";
     });
-    // alert("Copied!");
 }
 
 
@@ -90,3 +86,10 @@ const resetElement = (resetElem=".show-recording-msg", deleteElem = "body > div.
     const getNode = document.querySelector(deleteElem);
     getNode.remove();
 }
+
+
+// クリック イベント
+document.querySelector('#start').addEventListener('click', recording);
+document.querySelector('#stop').addEventListener('click', recordingStop);
+document.querySelector('#copy').addEventListener('click', copyToClipBoard);
+document.querySelector('#delete').addEventListener('click', deleteTextArea);

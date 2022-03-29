@@ -10,5 +10,5 @@
 
 # 動作
 <img alt="動作" src="https://user-images.githubusercontent.com/70006535/160376646-eda133a7-ad2e-475a-ad7a-0747d3871386.gif">
-※ポップアップ表示でなく、ローカルのindex.htmlで表示しています。
+※ポップアップ表示でなく、ローカルのindex.htmlで表示しています。<br>
 ※仕様変更のバグにより、chrome.tabs.sendMessageのresponseが使えないため、途中で断念しました。
